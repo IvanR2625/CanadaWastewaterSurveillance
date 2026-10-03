@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Palette tokens (dataviz skill reference palette) ── */
+:root, [data-theme="light"] {
+  --surface:   #fcfcfb;
+  --surface-2: #f9f9f7;
+  --ink:       #0b0b0b;
+  --ink-2:     #52514e;
+  --muted:     #898781;
+  --grid:      #e1e0d9;
+  --baseline:  #c3c2b7;
+  --border:    rgba(11,11,11,0.08);
+  --accent:    #c0392b;
+
+  /* categorical series (fixed order) */
+  --s1: #c0392b;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --s4: #eda100;
+  --s5: #2a78d6;
+  --s8: #e87ba4;
+
+  /* map sequential ramp (red, light → dark = low → high) */
+  --map-0:   #fef0ee;
+  --map-25:  #f4a59d;
+  --map-50:  #e05246;
+  --map-75:  #b52b1f;
+  --map-100: #6b1209;
+  --map-none:#e1e0d9;
+
+  /* status */
+  --good:     #0ca30c;
+  --critical: #d03b3b;
+  --warning:  #fab219;
+}
+
+[data-theme="dark"] {
+  --surface:   #1a1a19;
+  --surface-2: #0d0d0d;
+  --ink:       #ffffff;
+  --ink-2:     #c3c2b7;
+  --muted:     #898781;
+  --grid:      #2c2c2a;
+  --baseline:  #383835;
+  --border:    rgba(255,255,255,0.08);
+  --accent:    #e05246;
+
+  --s1: #e05246;
+  --s2: #d95926;
+  --s3: #199e70;
+  --s4: #c98500;
+  --s5: #3987e5;
+  --s8: #d55181;
+
+  --map-0:   #3a1210;
+  --map-25:  #7a2218;
+  --map-50:  #c0392b;
+  --map-75:  #e07060;
+  --map-100: #f5c4be;
+  --map-none:#2c2c2a;
+
+  --good:     #0ca30c;
+  --critical: #e66767;
+  --warning:  #fab219;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--surface-2);
+  color: var(--ink);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--grid) 25%, var(--baseline) 50%, var(--grid) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 4px;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--grid);
+}
+.recharts-cartesian-axis-tick-value {
+  fill: var(--muted) !important;
+  font-size: 11px;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar { width: 6px; }
+[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--surface-2); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--grid); border-radius: 3px; }
