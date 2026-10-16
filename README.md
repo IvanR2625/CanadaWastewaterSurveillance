@@ -1,9 +1,9 @@
 # Canada Wastewater Surveillance Dashboard
 
-An interactive dashboard for visualizing SARS-CoV-2 viral signal from wastewater surveillance sites across Canada, built on Public Health Agency of Canada (PHAC) open data.
+An interactive dashboard for visualizing SARS-CoV-2 viral signal from wastewater surveillance sites across Canada, built on Public Health Agency of Canada (PHAC) open data. Note that a similar version of this project using U.S. data is available at https://github.com/IvanR2625/WasteWaterSurveillance
+
 
 **[Live Site → https://ivanr2625.github.io/CanadaWastewaterSurveillance/](https://ivanr2625.github.io/CanadaWastewaterSurveillance/)**
-
 ---
 
 ## Features
